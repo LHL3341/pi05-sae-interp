@@ -28,7 +28,6 @@ school/
 │   ├── steer.py           # Aim 4: feature steering via forward pre-hooks
 │   ├── figures/           # final figure scripts + PDFs
 │   └── paligemma_tokenizer.model  # 4 MB SentencePiece (public big_vision GCS)
-└── proposal (1).pdf       # original project proposal
 ```
 
 ## 未上传的大文件（复现说明）
@@ -145,20 +144,3 @@ apptainer exec /path/to/texlive.sif bash build.sh
 - **transformers patch**: The local lerobot install uses a patched `transformers` module (`transformers_replace`) to match π₀.₅'s specific config requirements; `apply_patch.sh` copies it into the active venv (idempotent).  
 - **LIBERO adaptation**: LIBERO has only 2 cameras but π₀.₅ expects 3; the config uses `empty_cameras=1` to fill the third slot with -1 (matching training).  
 - **Gradient saliency**: Computed via a custom forward pass with a single denoise step and manual gradient accumulation (`∂z_j/∂image × image`), overlaid on RGB frames as a heatmap.
-
-## Citation
-
-Full project proposal at `proposal (1).pdf`. Code and paper produced for a 2026 class project; cite as:
-
-```bibtex
-@techreport{lin2026pi05sae,
-  author = {Honglin Lin and Zichen Wen and Xin Gao and Xinyue Li},
-  title = {Interpretability of $\pi_{0.5}$ via Sparse Autoencoders},
-  year = {2026},
-  note = {Class research project}
-}
-```
-
-## License
-
-MIT (code), CC BY 4.0 (paper).
