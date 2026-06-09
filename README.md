@@ -2,13 +2,6 @@
 
 A class research project investigating how sparse autoencoders (SAEs) decompose the vision-language-action interface in Physical Intelligence's π₀.₅ policy, with experiments on the LIBERO-10 benchmark.
 
-## Team
-
-- **林泓霖** (Honglin Lin): system integration, activation extraction  
-- **温子辰** (Zichen Wen): SAE implementation  
-- **高鑫** (Xin Gao): interpretability analysis  
-- **李馨月** (Xinyue Li): steering and functional assessment
-
 ## Quick Summary
 
 We hook the input to π₀.₅'s velocity projection layer (the VL backbone ↔ flow-matching expert boundary), train a Top-K SAE (k=32, d_dict=8192) on 480 LIBERO frames, and find:
