@@ -1,0 +1,38 @@
+\section{Related Work}
+\label{sec:related}
+
+\paragraph{Vision--language--action models.}
+OpenVLA~\citep{kim2024openvla} extends a discrete tokenisation paradigm to
+embodied control by training a 7B Llama-2 to autoregressively emit action
+tokens. Latency at inference forced subsequent designs toward continuous
+heads: $\pi_0$~\citep{black2024pi0} introduces a flow-matching action expert
+that conditions on a frozen PaliGemma backbone, and
+$\pi_{0.5}$~\citep{black2025pi05} adds knowledge insulation---blocking
+gradients from the action expert from corrupting the backbone---together with
+adaRMS-injected flow time, three multi-view image inputs and a discretised
+state encoded into the language prompt. Our work treats the
+$\pi_{0.5}$ knowledge-insulated interface as the explicit object of analysis.
+
+\paragraph{Sparse-autoencoder dictionaries.}
+\citet{cunningham2023sparse} and \citet{bricken2023monosemanticity} demonstrate
+that an overcomplete dictionary trained with an L1 penalty extracts
+near-monosemantic features from transformer LLMs.
+\citet{gao2024scaling} replace L1 with a hard top-$k$ activation, fixing
+sparsity exactly and enabling stable training at scale; we follow their recipe
+including the auxiliary dead-feature reanimation loss. Closest to our setting,
+\citet{swann2026sae} train SAEs on the residual stream of OpenVLA-style
+discrete VLAs and show that learned features are interpretable and
+\emph{steerable}---perturbations along single dictionary directions
+predictably shift the policy's action distribution. Our experiments target the
+continuous flow-matching expert of $\pi_{0.5}$ rather than a discrete decoder
+and study how the saturating geometry of normalised actions changes the
+steering response.
+
+\paragraph{Flow matching for control.}
+Flow matching~\citep{lipman2023flow} learns a continuous velocity field whose
+integration transports noise to data. In robotics it offers a single-pass
+alternative to denoising diffusion policies. Concurrent
+work~\citep{black2025pi05} reports that the flow expert benefits from a
+\emph{knowledge insulation} interface that prevents continuous gradients from
+degrading the backbone; we provide a first internal characterisation of this
+interface using sparse-coding tools.

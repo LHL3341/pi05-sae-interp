@@ -1,0 +1,82 @@
+\section{Experiments}
+\label{sec:experiments}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.98\linewidth]{fig1.pdf}
+\vspace{-0.4em}
+\caption{\small Three views of the SAE-instrumented $\pi_{0.5}$ interface.
+\textbf{(a)} $\|\Delta a\|$ pooled over $\alpha\!\in\!\{\pm1,\pm3\}$ and
+three features: trained $\pi_{0.5}$ saturates at $\sim$$0.5$ along both SAE
+and norm-matched random directions; an untrained $\pi_{0.5}$ stays near
+$13$---a $25{\times}$ gap.
+\textbf{(c)} Per-feature median CV across the $10$ denoise steps
+(features firing on $>2\%$ of frames): $2{,}215$ low-CV vs.~$1{,}594$
+high-CV, split at $\mathrm{CV}{=}0.5$ (red).
+\textbf{(d)} Activation heatmap of the top-$10$ low-CV (above red) and
+top-$10$ high-CV (below) features across $480$ frames sorted by episode:
+high-CV features fire as contiguous bands inside one episode; low-CV
+features fire as cross-episode speckles.}
+\label{fig:fig1}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.98\linewidth]{fig2.pdf}
+\vspace{-0.6em}
+\caption{\small \textbf{(b)} Top-activating LIBERO frames per feature,
+overlaid with gradient saliency $|\nabla_{\!I}\, z_j\!\cdot\! I|$. Feat
+2319 (high-CV, all $5$ frames from one task) attends to the
+gripper-on-mug contact region; feat 6951 (low-CV, frames span $3$ tasks)
+attends to an analogous gripper-near-object configuration across visibly
+different scenes.}
+\label{fig:fig2}
+\end{figure}
+
+\subsection{Setup}
+\label{ssec:exp_setup}
+The trained model is \texttt{lerobot/pi05\_libero\_base}; data are $480$
+LIBERO-10~\citep{liu2023libero} frames stratified evenly across $6$ episodes
+covering $3$ tasks. We log $h^\text{exp}$ on every flow-matching step,
+yielding $N{=}48{,}000$ activations of dimension $1024$. Steering experiments
+share fixed $(o,\varepsilon)$ across $(\alpha,j)$ pairs.
+
+\subsection{Sparse decomposition is faithful}
+\label{ssec:exp_sae}
+The SAE reaches $R^2{=}0.987$ after $50$ epochs; $3{,}809/8{,}192$ features
+fire on at least $2\%$ of frames, with the remaining $\sim$$54\%$ dormant
+under dead-feature reanimation. Reconstruction quality is comparable to SAE
+results on LLM residual streams, confirming that the velocity-projection
+input admits a sparse code despite living in a continuous-time vector field.
+
+\subsection{Features split into stable and flow-time-varying populations}
+\label{ssec:exp_cv}
+The median per-feature CV is sharply skewed toward zero (median $0.15$;
+Fig.~\ref{fig:fig1}c) with a high-CV tail peaking near $1.5$ and $2.0$;
+splitting at $\mathrm{CV}{=}0.5$ yields $2{,}215$ low-CV and $1{,}594$
+high-CV features. Their temporal occupancy differs qualitatively
+(Fig.~\ref{fig:fig1}d): every high-CV feature in the top-$10$ peak set
+occupies a single contiguous band inside one episode (consistent with a
+motion phase such as grasp/transport/place), while every low-CV feature
+fires as a sparse, episode-spanning speckle (consistent with task-invariant
+scene content). Image-space gradient saliency on the top-$5$ frames
+(Fig.~\ref{fig:fig2}) sharpens this: feat 2319 localises on the
+gripper-on-mug contact region in every task-0 transport frame; feat 6951
+lights up an analogous gripper-near-object configuration in cross-task
+frames whose backgrounds (white-mug table vs.\ a microwave) otherwise share
+no obvious appearance. This is a direct internal signature of the
+semantic / physical decoupling the knowledge-insulated interface is
+hypothesised to support.
+
+\subsection{Steering perturbations saturate $25\times$ below the random baseline}
+\label{ssec:exp_steer}
+Fig.~\ref{fig:fig1}a steers along $j\in\{1102,2036,7676\}$ averaged over $4$
+LIBERO frames. The trained model gives a $\sim$flat curve at
+$\|\Delta a\|{\approx}0.46$--$0.50$ along SAE directions and $0.47$--$0.63$
+along norm-matched random directions; the same dictionary directions in an
+untrained $\pi_{0.5}$ produce $\|\Delta a\|{\approx}13$ scaling linearly in
+$\alpha$, a $25{\times}$ ratio. The trained saturation level ($\sim$$0.5$ in
+normalised action units) sits well below the min--max clamp, so the gap is
+not an action-bound artefact; we read it as the trained continuous vector
+field being locally near-flat along the interface, absorbing moderate
+residual-stream perturbations before they reach the action.

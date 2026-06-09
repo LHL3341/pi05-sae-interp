@@ -1,0 +1,64 @@
+\section{Method}
+\label{sec:method}
+
+\paragraph{Hook target inside $\pi_{0.5}$.}
+The $\pi_{0.5}$ policy interleaves a PaliGemma backbone (SigLIP-So400m vision
+tower + Gemma-2B language head) with a Gemma-300M flow-matching expert via a
+single joint transformer block per layer that shares attention but maintains
+separate residual streams~\citep{black2025pi05}. Given an observation $o$
+(three RGB views, robot state, language prompt) the prefix tokens
+$h^\text{vlm}\in\mathbb{R}^{968\times 2048}$ produced by the backbone provide
+context to the expert, whose suffix tokens
+$h^\text{exp}\in\mathbb{R}^{H\times d_e}$ ($H{=}10$ action steps,
+$d_e{=}1024$) are decoded into a velocity field
+$v_\theta(o, x_t, t) = W_\text{out}\,h^\text{exp} + b_\text{out}$ via a single
+linear layer $W_\text{out}\in\mathbb{R}^{32\times 1024}$. We collect activations
+$x = h^\text{exp} \in \mathbb{R}^{1024}$ at the input of $W_\text{out}$
+\emph{at every flow-matching denoise step}, indexed by $(\text{frame}, t,
+\text{action token})$. This is the smallest hidden state that contains all of
+the semantic context the velocity uses, and it is one linear map away from the
+action; it is the natural object for studying the
+\emph{semantic-action interface}.
+
+\paragraph{Top-$K$ sparse autoencoder.}
+We train a single SAE on the pooled $h^\text{exp}$ tensor following
+\citet{gao2024scaling}: $z = \mathrm{TopK}_k\!\bigl(\mathrm{ReLU}(W_e(x-b_d)+b_e)\bigr)$,
+$\hat x = W_d z + b_d$, with $W_e\in\mathbb{R}^{d_\text{dict}\times d}$,
+$W_d\in\mathbb{R}^{d\times d_\text{dict}}$, $d{=}1024$, $d_\text{dict}{=}8192$,
+$k{=}32$. We minimise
+$\mathcal L = \|x-\hat x\|^2 + \tfrac{1}{32}\|x-\hat x - W_d \tilde z\|^2$,
+where $\tilde z$ activates only the top-$256$ \emph{dead} features (no firing in
+the last $1{,}000$ batches), as a dead-feature reanimation loss. We project
+$W_d$'s rows to unit norm after each step. Optimisation uses Adam ($\eta{=}3{\cdot}10^{-4}$),
+batch size $1024$, $50$ epochs.
+
+\paragraph{Feature stability across denoise steps.}
+For each frame $f$ and dictionary index $j$, let
+$z_j(f,t) = \mathrm{mean}_{\text{action token}} z_j$ at flow-matching step
+$t\in\{1,\dots,10\}$. We score the per-feature stability across denoise steps
+by the coefficient of variation
+$\mathrm{CV}_j(f) = \mathrm{std}_t\,z_j(f,t) / \max(\mathrm{mean}_t z_j(f,t),
+10^{-6})$,
+and report its median across the frames where feature $j$ fires at least once.
+A feature with $\mathrm{CV}{<}0.5$ contributes a near-constant offset over the
+entire denoise trajectory and corresponds to a candidate \emph{semantic} role;
+$\mathrm{CV}{>}0.5$ implies non-trivial variation with flow time and is a
+candidate \emph{physical / dynamic} role.
+
+\paragraph{Feature steering.}
+We attach a forward pre-hook to $W_\text{out}$ that adds
+$\alpha\,W_d[j]$ to its input at every denoise step.
+Holding the same observation $o$ and noise sample $\varepsilon$ fixed, we
+compare the unperturbed action chunk $a^{(0)}$ to $a^{(\alpha,j)}$ and report
+$\|\Delta a\| = \|a^{(\alpha,j)} - a^{(0)}\|_2$. Two controls match this against
+(i) magnitude-matched random Gaussian directions in place of $W_d[j]$, and
+(ii) the same architecture with weights re-initialised before training.
+
+\paragraph{Data and weights.}
+The trained model uses the publicly released \texttt{lerobot/pi05\_libero\_base}
+checkpoint ($3.6$B parameters, fp32). Activations are extracted from $480$
+LIBERO-10 frames stratified across $6$ episodes covering $3$ tasks
+(\texttt{put white mug on plate}, two two-object placement variants), with $10$
+flow-matching steps per frame, yielding $48{,}000$ activation tokens. The
+random-weight control re-initialises every parameter from the same
+configuration without loading the checkpoint.

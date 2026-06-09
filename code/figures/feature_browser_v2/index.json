@@ -1,0 +1,458 @@
+{
+  "4407": {
+    "group": "low_cv",
+    "fire_rate": 0.5125,
+    "median_cv": 0.09553167968988419,
+    "peak": 4.17106819152832,
+    "top_frames": [
+      319,
+      444,
+      410,
+      380,
+      10,
+      299
+    ],
+    "top_values": [
+      4.17106819152832,
+      3.431804656982422,
+      2.669496774673462,
+      2.600447416305542,
+      2.3625614643096924,
+      2.288699150085449
+    ],
+    "top_task_ids": [
+      2,
+      1,
+      1,
+      1,
+      0,
+      2
+    ],
+    "top_task_texts": [
+      "put the yellow and white mug in the microwave and close it",
+      "put the white mug on the plate and put the chocolate pudding",
+      "put the white mug on the plate and put the chocolate pudding",
+      "put the white mug on the plate and put the chocolate pudding",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the yellow and white mug in the microwave and close it"
+    ]
+  },
+  "1456": {
+    "group": "low_cv",
+    "fire_rate": 0.26458333333333334,
+    "median_cv": 0.16930001974105835,
+    "peak": 3.6522696018218994,
+    "top_frames": [
+      242,
+      168,
+      243,
+      173,
+      324,
+      364
+    ],
+    "top_values": [
+      3.6522696018218994,
+      2.8657214641571045,
+      2.4487338066101074,
+      2.369457960128784,
+      1.9173851013183594,
+      1.809253454208374
+    ],
+    "top_task_ids": [
+      2,
+      2,
+      2,
+      2,
+      1,
+      1
+    ],
+    "top_task_texts": [
+      "put the yellow and white mug in the microwave and close it",
+      "put the yellow and white mug in the microwave and close it",
+      "put the yellow and white mug in the microwave and close it",
+      "put the yellow and white mug in the microwave and close it",
+      "put the white mug on the plate and put the chocolate pudding",
+      "put the white mug on the plate and put the chocolate pudding"
+    ]
+  },
+  "6951": {
+    "group": "low_cv",
+    "fire_rate": 0.4125,
+    "median_cv": 0.11074614524841309,
+    "peak": 3.4738941192626953,
+    "top_frames": [
+      58,
+      63,
+      56,
+      449,
+      265,
+      167
+    ],
+    "top_values": [
+      3.4738941192626953,
+      2.933539628982544,
+      2.6435012817382812,
+      2.5582799911499023,
+      2.384582996368408,
+      2.34294056892395
+    ],
+    "top_task_ids": [
+      0,
+      0,
+      0,
+      1,
+      2,
+      2
+    ],
+    "top_task_texts": [
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the plate and put the chocolate pudding",
+      "put the yellow and white mug in the microwave and close it",
+      "put the yellow and white mug in the microwave and close it"
+    ]
+  },
+  "2486": {
+    "group": "low_cv",
+    "fire_rate": 0.17916666666666667,
+    "median_cv": 0.1287587434053421,
+    "peak": 3.4603493213653564,
+    "top_frames": [
+      330,
+      240,
+      162,
+      52,
+      3,
+      370
+    ],
+    "top_values": [
+      3.4603493213653564,
+      2.9101030826568604,
+      2.560009479522705,
+      1.8689308166503906,
+      1.815721035003662,
+      1.7908267974853516
+    ],
+    "top_task_ids": [
+      1,
+      2,
+      2,
+      0,
+      0,
+      1
+    ],
+    "top_task_texts": [
+      "put the white mug on the plate and put the chocolate pudding",
+      "put the yellow and white mug in the microwave and close it",
+      "put the yellow and white mug in the microwave and close it",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the plate and put the chocolate pudding"
+    ]
+  },
+  "1666": {
+    "group": "low_cv",
+    "fire_rate": 0.20208333333333334,
+    "median_cv": 0.16825330257415771,
+    "peak": 3.440281391143799,
+    "top_frames": [
+      365,
+      370,
+      233,
+      248,
+      131,
+      142
+    ],
+    "top_values": [
+      3.440281391143799,
+      2.4423725605010986,
+      2.250102996826172,
+      1.9656001329421997,
+      1.9390685558319092,
+      1.903763771057129
+    ],
+    "top_task_ids": [
+      1,
+      1,
+      2,
+      2,
+      1,
+      1
+    ],
+    "top_task_texts": [
+      "put the white mug on the plate and put the chocolate pudding",
+      "put the white mug on the plate and put the chocolate pudding",
+      "put the yellow and white mug in the microwave and close it",
+      "put the yellow and white mug in the microwave and close it",
+      "put the white mug on the plate and put the chocolate pudding",
+      "put the white mug on the plate and put the chocolate pudding"
+    ]
+  },
+  "2855": {
+    "group": "low_cv",
+    "fire_rate": 0.3375,
+    "median_cv": 0.1265316903591156,
+    "peak": 3.438359260559082,
+    "top_frames": [
+      463,
+      251,
+      60,
+      325,
+      450,
+      58
+    ],
+    "top_values": [
+      3.438359260559082,
+      2.40152645111084,
+      2.343136787414551,
+      2.313296318054199,
+      2.295072317123413,
+      2.2388594150543213
+    ],
+    "top_task_ids": [
+      1,
+      2,
+      0,
+      1,
+      1,
+      0
+    ],
+    "top_task_texts": [
+      "put the white mug on the plate and put the chocolate pudding",
+      "put the yellow and white mug in the microwave and close it",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the plate and put the chocolate pudding",
+      "put the white mug on the plate and put the chocolate pudding",
+      "put the white mug on the left plate and put the yellow and w"
+    ]
+  },
+  "1098": {
+    "group": "high_cv",
+    "fire_rate": 0.12916666666666668,
+    "median_cv": 2.0448145866394043,
+    "peak": 8.522151947021484,
+    "top_frames": [
+      225,
+      307,
+      228,
+      306,
+      226,
+      227
+    ],
+    "top_values": [
+      8.522151947021484,
+      7.809518337249756,
+      7.763040065765381,
+      7.7598958015441895,
+      7.6846723556518555,
+      7.681807041168213
+    ],
+    "top_task_ids": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "top_task_texts": [
+      "put the yellow and white mug in the microwave and close it",
+      "put the yellow and white mug in the microwave and close it",
+      "put the yellow and white mug in the microwave and close it",
+      "put the yellow and white mug in the microwave and close it",
+      "put the yellow and white mug in the microwave and close it",
+      "put the yellow and white mug in the microwave and close it"
+    ]
+  },
+  "7603": {
+    "group": "high_cv",
+    "fire_rate": 0.12916666666666668,
+    "median_cv": 1.441525936126709,
+    "peak": 7.914615154266357,
+    "top_frames": [
+      254,
+      248,
+      253,
+      247,
+      252,
+      246
+    ],
+    "top_values": [
+      7.914615154266357,
+      7.657944679260254,
+      7.6226067543029785,
+      7.554324626922607,
+      7.546653747558594,
+      7.5178542137146
+    ],
+    "top_task_ids": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "top_task_texts": [
+      "put the yellow and white mug in the microwave and close it",
+      "put the yellow and white mug in the microwave and close it",
+      "put the yellow and white mug in the microwave and close it",
+      "put the yellow and white mug in the microwave and close it",
+      "put the yellow and white mug in the microwave and close it",
+      "put the yellow and white mug in the microwave and close it"
+    ]
+  },
+  "683": {
+    "group": "high_cv",
+    "fire_rate": 0.058333333333333334,
+    "median_cv": 2.999999761581421,
+    "peak": 7.486721038818359,
+    "top_frames": [
+      238,
+      236,
+      235,
+      237,
+      239,
+      234
+    ],
+    "top_values": [
+      7.486721038818359,
+      6.654144763946533,
+      6.36707067489624,
+      6.197524547576904,
+      6.1204986572265625,
+      5.097362041473389
+    ],
+    "top_task_ids": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "top_task_texts": [
+      "put the yellow and white mug in the microwave and close it",
+      "put the yellow and white mug in the microwave and close it",
+      "put the yellow and white mug in the microwave and close it",
+      "put the yellow and white mug in the microwave and close it",
+      "put the yellow and white mug in the microwave and close it",
+      "put the yellow and white mug in the microwave and close it"
+    ]
+  },
+  "2319": {
+    "group": "high_cv",
+    "fire_rate": 0.13333333333333333,
+    "median_cv": 2.493659496307373,
+    "peak": 7.364805221557617,
+    "top_frames": [
+      59,
+      62,
+      61,
+      58,
+      57,
+      60
+    ],
+    "top_values": [
+      7.364805221557617,
+      7.260909557342529,
+      7.254774570465088,
+      7.177680492401123,
+      7.149926662445068,
+      7.091251850128174
+    ],
+    "top_task_ids": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "top_task_texts": [
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w"
+    ]
+  },
+  "4566": {
+    "group": "high_cv",
+    "fire_rate": 0.052083333333333336,
+    "median_cv": 2.999999761581421,
+    "peak": 7.026943683624268,
+    "top_frames": [
+      215,
+      217,
+      213,
+      218,
+      214,
+      216
+    ],
+    "top_values": [
+      7.026943683624268,
+      6.804481506347656,
+      6.562524318695068,
+      6.36544132232666,
+      6.33778190612793,
+      6.253778457641602
+    ],
+    "top_task_ids": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "top_task_texts": [
+      "put the yellow and white mug in the microwave and close it",
+      "put the yellow and white mug in the microwave and close it",
+      "put the yellow and white mug in the microwave and close it",
+      "put the yellow and white mug in the microwave and close it",
+      "put the yellow and white mug in the microwave and close it",
+      "put the yellow and white mug in the microwave and close it"
+    ]
+  },
+  "2988": {
+    "group": "high_cv",
+    "fire_rate": 0.08541666666666667,
+    "median_cv": 3.0,
+    "peak": 7.000011444091797,
+    "top_frames": [
+      312,
+      314,
+      313,
+      315,
+      311,
+      310
+    ],
+    "top_values": [
+      7.000011444091797,
+      6.941848278045654,
+      6.896524906158447,
+      6.686117649078369,
+      6.1055707931518555,
+      5.4852094650268555
+    ],
+    "top_task_ids": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "top_task_texts": [
+      "put the yellow and white mug in the microwave and close it",
+      "put the yellow and white mug in the microwave and close it",
+      "put the yellow and white mug in the microwave and close it",
+      "put the yellow and white mug in the microwave and close it",
+      "put the yellow and white mug in the microwave and close it",
+      "put the yellow and white mug in the microwave and close it"
+    ]
+  }
+}

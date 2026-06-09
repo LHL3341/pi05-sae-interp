@@ -1,0 +1,36 @@
+\section{Reproducibility details}
+\label{app:repro}
+
+\paragraph{Model.}
+\texttt{lerobot/pi05\_libero\_base} (HuggingFace), float32, $3.6$B parameters.
+We instantiate it through \texttt{lerobot.common.policies.pi05.modeling\_pi05.PI05Policy}
+with the LIBERO-10 \texttt{stats.json} as dataset normalisation statistics
+and the public PaliGemma SentencePiece tokenizer pulled from
+\texttt{gs://big\_vision/paligemma\_tokenizer.model}.
+
+\paragraph{Hook implementation.}
+We register a forward hook on \texttt{policy.model.action\_out\_proj} that
+captures \texttt{inp[0]} (shape $[B,H,d_e]{=}[1,10,1024]$) at every flow-matching
+denoise step, and additionally wrap \texttt{paligemma\_with\_expert.forward} to
+log final prefix and suffix outputs. The wrapping is required because
+\texttt{PaliGemmaWithExpertModel} runs its layers inside a Python loop with
+local rebinding of \texttt{inputs\_embeds}, so a standard
+\texttt{register\_forward\_hook} on individual transformer blocks does not fire.
+
+\paragraph{Steering implementation.}
+\texttt{torch.nn.Module.register\_forward\_pre\_hook} on
+\texttt{action\_out\_proj} replaces the input with $x + \alpha\,W_d[j]$
+on every denoise step. Same observation and noise tensor are reused across
+$(\alpha,j)$ pairs for paired comparisons.
+
+\paragraph{Compute.}
+A single A100-80GB. End-to-end pipeline (extract $480$ frames $\rightarrow$
+train SAE $50$ epochs $\rightarrow$ feature analysis $\rightarrow$ $3$
+features $\times\,5$ $\alpha$ values steering with $4$ rollouts each)
+runs in $\sim$$13$ minutes on the trained model.
+
+\paragraph{Code.}
+Open-sourced at the project repository; the four scripts
+\texttt{extract\_real.py}, \texttt{sae.py}, \texttt{analyze\_features.py},
+\texttt{steer\_real.py} reproduce all numbers in the main body and
+Fig.~\ref{fig:fig2}.

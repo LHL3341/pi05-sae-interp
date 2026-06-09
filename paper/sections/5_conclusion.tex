@@ -1,0 +1,18 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+We applied a Top-$K$ SAE to the velocity-projection input of $\pi_{0.5}$, a
+continuous-time VLA connecting a frozen vision--language backbone to a
+flow-matching action expert via a knowledge-insulated interface. The SAE
+reconstructs faithfully ($R^2{=}0.987$, $32$-sparse), splits its dictionary
+into $2{,}215$ flow-time-stable and $1{,}594$ flow-time-varying features
+that qualitatively realise the semantic / motion-phase distinction the
+architecture predicts, and produces a steering response $25{\times}$ smaller
+than the same model before training---evidence that supervised flow-matching
+trains a robust, near-flat continuous vector field along these directions.
+
+\paragraph{Limitations and future work.}
+The analysis is correlative; saturation of $\|\Delta a\|$ at large $\alpha$
+makes SAE directions empirically indistinguishable from random ones at this
+metric. Ablating features under a task-success protocol and hooking the VLM
+prefix are natural next steps.

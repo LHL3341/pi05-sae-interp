@@ -1,0 +1,50 @@
+\section{Introduction}
+\label{sec:intro}
+
+Vision--language--action (VLA) policies have moved from autoregressive token
+decoding~\citep{kim2024openvla} to continuous flow-matching action
+experts~\citep{black2024pi0,black2025pi05} to support high-frequency closed-loop
+control. The recent $\pi_{0.5}$ model achieves this by attaching a Gemma-300M
+flow-matching expert to a frozen PaliGemma vision--language backbone, separated
+by a \emph{knowledge insulation} interface that truncates gradient flow to
+preserve generalization while specialising the action head~\citep{black2025pi05}.
+Despite the empirical success of this hybrid, the internal division of labour
+at this interface---what semantic information crosses, and how it shapes the
+continuous-time vector field that produces actions---remains opaque.
+
+Sparse autoencoders (SAEs) decompose dense activations into a large
+overcomplete dictionary of mostly inactive features and have become a
+standard tool for mechanistic interpretation of transformer
+LLMs~\citep{cunningham2023sparse,bricken2023monosemanticity,gao2024scaling}.
+Their use within VLA systems is nascent: \citet{swann2026sae} report
+interpretable and steerable features in autoregressive VLAs but leave the
+continuous flow-matching case open. The flow-matching setting introduces two
+representational complexities absent from discrete decoders. First, the
+expert's residual stream is queried at every denoise step in a fixed flow-time
+schedule, so the same dictionary direction may carry stable scene context at
+some steps and time-varying dynamics at others. Second, the action distribution
+is bounded by min--max normalisation, so even large activation perturbations
+are projected onto a finite output range, masking nonlinear effects that would
+be visible in unconstrained logit spaces.
+
+\paragraph{Contributions.}
+We adapt the Top-$K$ SAE recipe~\citep{gao2024scaling} to $\pi_{0.5}$ on the
+LIBERO benchmark~\citep{liu2023libero} and report three findings.
+\textbf{(i)} A $d_\text{dict}{=}8192$, $k{=}32$ dictionary on the
+velocity-projection input explains $R^2{=}0.987$ of activation variance with
+$\sim$$20\%$ dead features (\S\ref{ssec:exp_sae}).
+\textbf{(ii)} The coefficient of variation across the ten flow-matching steps
+splits the dictionary into $2{,}215$ low-CV features that fire on cross-task
+scene concepts and $1{,}594$ high-CV features that concentrate on per-task
+motion phases (\S\ref{ssec:exp_cv}, Fig.~\ref{fig:fig2}b--c).
+\textbf{(iii)} Adding $\alpha W_\text{dec}[f]$ to the velocity-projection input
+of the trained model perturbs the action by $\|\Delta a\|{\approx}0.5$
+\emph{independent of $\alpha\in[-3,3]$ and of whether $W_\text{dec}[f]$ is an SAE
+feature or a norm-matched random direction}; an identically-shaped untrained
+$\pi_{0.5}$ instead responds at $\|\Delta a\|{\approx}13$ and scales linearly
+in $\alpha$ (\S\ref{ssec:exp_steer}, Fig.~\ref{fig:fig2}a).
+
+Together these establish that the SAE machinery developed for discrete LLMs
+transfers to a continuous-time VLA, and reveal a saturating, near-flat
+continuous vector field at the semantic--action interface that random
+initialisation does not exhibit.

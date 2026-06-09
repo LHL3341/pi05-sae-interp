@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Jupyter
+.ipynb_checkpoints
+
+# Experiments: large data & checkpoints
+code/checkpoints/
+code/datasets/
+code/activations/
+code/runs/
+
+# OpenPI clone (12GB)
+code/openpi/
+
+# Intermediate feature browsers (5MB total, keep for reproducibility but optional)
+# code/figures/feature_browser/
+# code/figures/feature_browser_v2/
+
+# LaTeX aux files
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.log
+paper/*.out
+paper/*.synctex.gz
+paper/*.fls
+paper/*.fdb_latexmk
+
+# Keep final PDFs and scripts, drop .png previews to save space
+code/figures/*.png
+code/figures/saliency_tiles/
+
+# OS
+.DS_Store
+Thumbs.db
+*~
+.vscode/
+.idea/

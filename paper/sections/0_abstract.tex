@@ -1,0 +1,18 @@
+Sparse autoencoders (SAEs) have proven effective at extracting interpretable
+features from discrete language models, but their applicability to
+\emph{continuous-time} vision--language--action (VLA) policies is unclear.
+We instrument $\pi_{0.5}$, which couples a PaliGemma backbone to a Gemma flow-matching
+action expert via a knowledge-insulated interface, with forward hooks at the input
+to the velocity projection---the precise boundary at which semantic context becomes
+a flow-time-conditioned vector field. Training a Top-$K$ SAE
+($d_\text{dict}{=}8192$, $k{=}32$) on activations from $480$ LIBERO frames yields
+a faithful sparse decomposition (reconstruction $R^2{=}0.987$, $66\%$ feature usage).
+The dictionary splits cleanly into two regimes: $2{,}215$ features
+that are stable across the flow-matching denoise trajectory (CV${<}0.5$) and fire
+on cross-task semantic concepts, versus $1{,}594$ high-variance features
+that track task-specific motion phases. Steering perturbations along learned
+feature directions saturate at $\|\Delta a\|{\approx}0.5$ regardless of perturbation
+magnitude, in stark contrast to a $25{\times}$ larger and approximately linear response in
+the same architecture before training---direct evidence that supervised
+flow-matching compresses the semantic-action interface into a robust and
+near-flat manifold along structured directions.

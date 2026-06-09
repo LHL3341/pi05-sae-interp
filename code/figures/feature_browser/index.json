@@ -1,0 +1,458 @@
+{
+  "5616": {
+    "group": "low_cv",
+    "fire_rate": 0.4453125,
+    "median_cv": 0.14485757052898407,
+    "peak": 3.376960277557373,
+    "top_frames": [
+      24,
+      88,
+      91,
+      27,
+      14,
+      200
+    ],
+    "top_values": [
+      3.376960277557373,
+      2.289541006088257,
+      2.2661454677581787,
+      1.9892743825912476,
+      1.856757640838623,
+      1.82038152217865
+    ],
+    "top_task_ids": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "top_task_texts": [
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w"
+    ]
+  },
+  "7138": {
+    "group": "low_cv",
+    "fire_rate": 0.2421875,
+    "median_cv": 0.08114941418170929,
+    "peak": 3.335399627685547,
+    "top_frames": [
+      48,
+      83,
+      200,
+      51,
+      199,
+      49
+    ],
+    "top_values": [
+      3.335399627685547,
+      2.9336726665496826,
+      2.3941919803619385,
+      2.1052677631378174,
+      1.965849757194519,
+      1.8403910398483276
+    ],
+    "top_task_ids": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "top_task_texts": [
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w"
+    ]
+  },
+  "6627": {
+    "group": "low_cv",
+    "fire_rate": 0.41015625,
+    "median_cv": 0.11320314556360245,
+    "peak": 3.2604188919067383,
+    "top_frames": [
+      161,
+      68,
+      89,
+      172,
+      87,
+      50
+    ],
+    "top_values": [
+      3.2604188919067383,
+      2.133476495742798,
+      1.9890884160995483,
+      1.9462841749191284,
+      1.9170585870742798,
+      1.902290940284729
+    ],
+    "top_task_ids": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "top_task_texts": [
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w"
+    ]
+  },
+  "8051": {
+    "group": "low_cv",
+    "fire_rate": 0.07421875,
+    "median_cv": 0.141558438539505,
+    "peak": 3.2513694763183594,
+    "top_frames": [
+      204,
+      96,
+      106,
+      148,
+      95,
+      201
+    ],
+    "top_values": [
+      3.2513694763183594,
+      2.243640899658203,
+      2.162405490875244,
+      1.641552209854126,
+      1.5793546438217163,
+      1.550956130027771
+    ],
+    "top_task_ids": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "top_task_texts": [
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w"
+    ]
+  },
+  "7806": {
+    "group": "low_cv",
+    "fire_rate": 0.0546875,
+    "median_cv": 0.11974623799324036,
+    "peak": 3.131380796432495,
+    "top_frames": [
+      6,
+      201,
+      15,
+      223,
+      7,
+      236
+    ],
+    "top_values": [
+      3.131380796432495,
+      1.8476369380950928,
+      1.7073049545288086,
+      1.3667715787887573,
+      1.302954077720642,
+      1.2952266931533813
+    ],
+    "top_task_ids": [
+      0,
+      0,
+      0,
+      1,
+      0,
+      1
+    ],
+    "top_task_texts": [
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the plate and put the chocolate pudding",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the plate and put the chocolate pudding"
+    ]
+  },
+  "7574": {
+    "group": "low_cv",
+    "fire_rate": 0.56640625,
+    "median_cv": 0.07407709956169128,
+    "peak": 3.0309500694274902,
+    "top_frames": [
+      113,
+      122,
+      139,
+      87,
+      249,
+      201
+    ],
+    "top_values": [
+      3.0309500694274902,
+      2.9577884674072266,
+      2.893141269683838,
+      2.452798843383789,
+      2.4283740520477295,
+      2.2491278648376465
+    ],
+    "top_task_ids": [
+      0,
+      0,
+      0,
+      0,
+      1,
+      0
+    ],
+    "top_task_texts": [
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the plate and put the chocolate pudding",
+      "put the white mug on the left plate and put the yellow and w"
+    ]
+  },
+  "7676": {
+    "group": "high_cv",
+    "fire_rate": 0.3671875,
+    "median_cv": 1.7398202419281006,
+    "peak": 9.543861389160156,
+    "top_frames": [
+      133,
+      134,
+      135,
+      130,
+      126,
+      137
+    ],
+    "top_values": [
+      9.543861389160156,
+      9.399267196655273,
+      9.389391899108887,
+      9.210030555725098,
+      9.171415328979492,
+      9.139162063598633
+    ],
+    "top_task_ids": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "top_task_texts": [
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w"
+    ]
+  },
+  "2036": {
+    "group": "high_cv",
+    "fire_rate": 0.234375,
+    "median_cv": 2.2472400665283203,
+    "peak": 8.181689262390137,
+    "top_frames": [
+      168,
+      167,
+      172,
+      171,
+      169,
+      170
+    ],
+    "top_values": [
+      8.181689262390137,
+      7.774372100830078,
+      7.681117057800293,
+      7.642372131347656,
+      7.473099708557129,
+      7.466109275817871
+    ],
+    "top_task_ids": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "top_task_texts": [
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w"
+    ]
+  },
+  "1102": {
+    "group": "high_cv",
+    "fire_rate": 0.2890625,
+    "median_cv": 1.5853962898254395,
+    "peak": 8.027765274047852,
+    "top_frames": [
+      5,
+      19,
+      2,
+      8,
+      16,
+      9
+    ],
+    "top_values": [
+      8.027765274047852,
+      7.623459815979004,
+      7.606473922729492,
+      7.588863849639893,
+      7.5538554191589355,
+      7.534977912902832
+    ],
+    "top_task_ids": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "top_task_texts": [
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w"
+    ]
+  },
+  "2596": {
+    "group": "high_cv",
+    "fire_rate": 0.3515625,
+    "median_cv": 2.2496118545532227,
+    "peak": 7.7467041015625,
+    "top_frames": [
+      90,
+      91,
+      100,
+      89,
+      94,
+      93
+    ],
+    "top_values": [
+      7.7467041015625,
+      7.601286888122559,
+      7.517413139343262,
+      7.4376220703125,
+      7.427455425262451,
+      7.240984916687012
+    ],
+    "top_task_ids": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "top_task_texts": [
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w"
+    ]
+  },
+  "6142": {
+    "group": "high_cv",
+    "fire_rate": 0.32421875,
+    "median_cv": 2.3742637634277344,
+    "peak": 6.962571620941162,
+    "top_frames": [
+      58,
+      60,
+      61,
+      59,
+      65,
+      67
+    ],
+    "top_values": [
+      6.962571620941162,
+      6.9320526123046875,
+      6.929998874664307,
+      6.766659259796143,
+      6.593233585357666,
+      6.591858863830566
+    ],
+    "top_task_ids": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "top_task_texts": [
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w"
+    ]
+  },
+  "2505": {
+    "group": "high_cv",
+    "fire_rate": 0.1640625,
+    "median_cv": 1.8087406158447266,
+    "peak": 6.553926944732666,
+    "top_frames": [
+      185,
+      176,
+      183,
+      187,
+      184,
+      186
+    ],
+    "top_values": [
+      6.553926944732666,
+      6.372763156890869,
+      6.0630950927734375,
+      6.042043685913086,
+      6.022973537445068,
+      5.905555725097656
+    ],
+    "top_task_ids": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "top_task_texts": [
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w",
+      "put the white mug on the left plate and put the yellow and w"
+    ]
+  }
+}
