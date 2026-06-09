@@ -11,9 +11,6 @@ build/
 # Jupyter
 .ipynb_checkpoints
 
-# Claude Code internals
-.claude/skills/
-
 # Overleaf credentials
 *overleaf*
 *OVERLEAF*
